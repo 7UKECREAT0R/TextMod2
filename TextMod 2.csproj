@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B81C6D8-6952-4F0F-9FBA-C1DC6624DE8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TextMod_2</RootNamespace>
+    <AssemblyName>TextMod 2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TextMod Logo v2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.0.175\lib\net35\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=3.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.9.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=3.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.3.9.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.5.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.5.0.0\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\BinaryCommand.cs" />
+    <Compile Include="Commands\ClapCommand.cs" />
+    <Compile Include="Commands\DefineCommand.cs" />
+    <Compile Include="Commands\EmojiCommand.cs" />
+    <Compile Include="Commands\EmojiPastaCommand.cs" />
+    <Compile Include="Commands\FurryCommand.cs" />
+    <Compile Include="Commands\GamertagCommand.cs" />
+    <Compile Include="Commands\LinesCommand.cs" />
+    <Compile Include="Commands\LongCommand.cs" />
+    <Compile Include="Commands\NatoCommand.cs" />
+    <Compile Include="Commands\OddCommand.cs" />
+    <Compile Include="Commands\PyramidCommand.cs" />
+    <Compile Include="Commands\ReverseCommand.cs" />
+    <Compile Include="Commands\SmallCommand.cs" />
+    <Compile Include="Commands\SnippetCommand.cs" />
+    <Compile Include="Commands\SoundsCommand.cs" />
+    <Compile Include="Commands\SpoilerCommand.cs" />
+    <Compile Include="Commands\TinyCommand.cs" />
+    <Compile Include="Commands\UpperCommand.cs" />
+    <Compile Include="Commands\WeirdCommand.cs" />
+    <Compile Include="Commands\ZalgoCommand.cs" />
+    <Compile Include="Controls\EmojiGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EmojiGrid.Designer.cs">
+      <DependentUpon>EmojiGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageCommands.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageCommands.Designer.cs">
+      <DependentUpon>PageCommands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageEmoji.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageEmoji.Designer.cs">
+      <DependentUpon>PageEmoji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHome.Designer.cs">
+      <DependentUpon>PageHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageImageCommands.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageImageCommands.Designer.cs">
+      <DependentUpon>PageImageCommands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageRichPresence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageRichPresence.Designer.cs">
+      <DependentUpon>PageRichPresence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageScripts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageScripts.Designer.cs">
+      <DependentUpon>PageScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageUtilities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageUtilities.Designer.cs">
+      <DependentUpon>PageUtilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Switch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Switch.Designer.cs">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabList.Designer.cs">
+      <DependentUpon>TabList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextModTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextModTab.Designer.cs">
+      <DependentUpon>TextModTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ApplicationHook.cs" />
+    <Compile Include="Core\Command.cs" />
+    <Compile Include="Core\CommandManager.cs" />
+    <Compile Include="Core\EmojiProfile.cs" />
+    <Compile Include="Core\EncryptorBase.cs" />
+    <Compile Include="Core\KeyboardHook.cs" />
+    <Compile Include="Core\MouseHook.cs" />
+    <Compile Include="Core\RichPresenceProfile.cs" />
+    <Compile Include="Core\ScriptManager.cs" />
+    <Compile Include="Core\TextModCore.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Art\AsciiArtText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Art\AsciiArtText.Designer.cs">
+      <DependentUpon>AsciiArtText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AsciiArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AsciiArt.Designer.cs">
+      <DependentUpon>AsciiArt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Art\AsciiArtEmoji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Art\AsciiArtEmoji.Designer.cs">
+      <DependentUpon>AsciiArtEmoji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AutoCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoCounter.Designer.cs">
+      <DependentUpon>AutoCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateScriptForm.Designer.cs">
+      <DependentUpon>CreateScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EncryptorDecryptor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EncryptorDecryptor.Designer.cs">
+      <DependentUpon>EncryptorDecryptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IdDecoder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IdDecoder.Designer.cs">
+      <DependentUpon>IdDecoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeyboardMods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeyboardMods.Designer.cs">
+      <DependentUpon>KeyboardMods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RichPresenceGetClientID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RichPresenceGetClientID.Designer.cs">
+      <DependentUpon>RichPresenceGetClientID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RichPresenceNotShowing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RichPresenceNotShowing.Designer.cs">
+      <DependentUpon>RichPresenceNotShowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZipFileHider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZipFileHider.Designer.cs">
+      <DependentUpon>ZipFileHider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="Styling\FontLoader.cs" />
+    <Compile Include="Styling\Visuals.cs" />
+    <Compile Include="Variables\ActiveTitleVariable.cs" />
+    <Compile Include="Variables\ActiveVariable.cs" />
+    <Compile Include="Variables\ChooseVariable.cs" />
+    <Compile Include="Variables\ClicksVariable.cs" />
+    <Compile Include="Variables\CPUVariable.cs" />
+    <Compile Include="Variables\MemoryVariable.cs" />
+    <Compile Include="Variables\MousePositionVariable.cs" />
+    <Compile Include="Variables\RichPresenceVariable.cs" />
+    <Compile Include="Variables\ScrollVariable.cs" />
+    <Compile Include="Variables\TimeVariable.cs" />
+    <EmbeddedResource Include="Controls\EmojiGrid.resx">
+      <DependentUpon>EmojiGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageCommands.resx">
+      <DependentUpon>PageCommands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageEmoji.resx">
+      <DependentUpon>PageEmoji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageHome.resx">
+      <DependentUpon>PageHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageImageCommands.resx">
+      <DependentUpon>PageImageCommands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageRichPresence.resx">
+      <DependentUpon>PageRichPresence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageScripts.resx">
+      <DependentUpon>PageScripts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageUtilities.resx">
+      <DependentUpon>PageUtilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Switch.resx">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabList.resx">
+      <DependentUpon>TabList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextModTab.resx">
+      <DependentUpon>TextModTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Art\AsciiArtText.resx">
+      <DependentUpon>AsciiArtText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AsciiArt.resx">
+      <DependentUpon>AsciiArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Art\AsciiArtEmoji.resx">
+      <DependentUpon>AsciiArtEmoji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCounter.resx">
+      <DependentUpon>AutoCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateScriptForm.resx">
+      <DependentUpon>CreateScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EncryptorDecryptor.resx">
+      <DependentUpon>EncryptorDecryptor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IdDecoder.resx">
+      <DependentUpon>IdDecoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeyboardMods.resx">
+      <DependentUpon>KeyboardMods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RichPresenceGetClientID.resx">
+      <DependentUpon>RichPresenceGetClientID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RichPresenceNotShowing.resx">
+      <DependentUpon>RichPresenceNotShowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZipFileHider.resx">
+      <DependentUpon>ZipFileHider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Bebas-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dicord.png" />
+    <None Include="Resources\dicord 2.png" />
+    <None Include="Resources\splash.png" />
+    <Content Include="TextMod Logo v2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets')" />
+</Project>
