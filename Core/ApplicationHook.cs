@@ -207,8 +207,15 @@ namespace TextMod_2.Core
             Automation.RemoveAutomationFocusChangedEventHandler(FocusChangeEvent);
             Application.ApplicationExit -= UnhookInputHandler;
         }
+
+        // pinvoke
+        
         [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
+        public static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("user32")]
         static extern int GetWindowThreadProcessId(IntPtr hWnd, out int processId);

@@ -66,6 +66,14 @@ namespace TextMod_2.Controls
             openWindow = decoder;
             decoder.Show();
         }
+        private void longTyperButton_Click(object sender, EventArgs e)
+        {
+            LongTyper decoder = new LongTyper((ParentForm as Form1).textMod);
+            AnyFormClosed(null, null);
+            decoder.FormClosed += AnyFormClosed;
+            openWindow = decoder;
+            decoder.Show();
+        }
 
         private void AnyFormClosed(object sender, FormClosedEventArgs e)
         {

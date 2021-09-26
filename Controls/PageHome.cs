@@ -49,6 +49,15 @@ namespace TextMod_2.Controls
             hideButton.Enabled = false;
             attachButton.BringToFront();
         }
+        public void StopAttaching(ref TextModCore core)
+        {
+            coreReference = core;
+            attachButton.Enabled = false;
+            attachButton.Visible = false;
+            hideButton.Enabled = true;
+            hideButton.Visible = true;
+            attachButton.SendToBack();
+        }
         public void SetSwitches()
         {
             SetStartup(TextModCore.runOnStartup);

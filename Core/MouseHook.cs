@@ -12,13 +12,19 @@ namespace TextMod_2.Core
     {
         internal static event EventHandler MouseAction = delegate { };
 
+        internal static bool hookStarted = false;
         internal static void Start()
         {
+            if (hookStarted)
+                return;
+
             _hookID = SetHook(_proc);
+            hookStarted = true;
         }
         internal static void Stop()
         {
             UnhookWindowsHookEx(_hookID);
+            hookStarted = false;
         }
 
         private static LowLevelMouseProc _proc = HookCallback;

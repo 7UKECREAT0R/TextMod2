@@ -131,7 +131,7 @@ The contents of the text files will be sent in Discord when running the ""-snipp
         public CommandManager commands { get; private set; }
         public ScriptManager scripts { get; private set; }
         public int processID = -1;
-        //public IntPtr mainWindowHWND;
+        public IntPtr mainWindowHWND;
 
         public void Initialize()
         {
@@ -191,16 +191,16 @@ The contents of the text files will be sent in Discord when running the ""-snipp
         {
             Debug.WriteLine("Searching for all Discord processes...");
             Process[] discords = Process.GetProcessesByName("Discord");
+            if (discords.Length < 1)
+                discords = Process.GetProcessesByName("DiscordCanary");
+            if (discords.Length < 1)
+                discords = Process.GetProcessesByName("DiscordPTB");
             Debug.WriteLine("Found {0} Discord processes.", discords.Length);
 
             if (discords.Length < 1)
-            {
-                MessageBox.Show("Can't find any discord process open. Click the \"Attach\" button when it's open.");
                 return;
-            }
 
             Debug.WriteLine("Searching for main window handle...");
-            IntPtr mainWindowHWND = IntPtr.Zero;
             foreach (Process prs in discords)
                 if (prs.MainWindowHandle != IntPtr.Zero)
                 {
@@ -209,10 +209,8 @@ The contents of the text files will be sent in Discord when running the ""-snipp
                 }
 
             if (mainWindowHWND == IntPtr.Zero)
-            {
-                MessageBox.Show("Can't locate any discord windows. Click the \"Attach to Discord\" button when discord is open.");
                 return;
-            }
+
             Debug.WriteLine("Located window handle {0} with PID {1}", mainWindowHWND, processID);
         }
 

@@ -48,14 +48,14 @@ namespace TextMod_2.Forms
             // 
             // outputLabel
             // 
-            this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.ForeColor = System.Drawing.Color.White;
             this.outputLabel.Location = new System.Drawing.Point(16, 54);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(326, 42);
+            this.outputLabel.Size = new System.Drawing.Size(496, 48);
             this.outputLabel.TabIndex = 1;
-            this.outputLabel.Text = "Place someone\'s Discord ID here to\r\ndecode the date their account was made.";
+            this.outputLabel.Text = "Place any Discord ID here and this will show when it was made. Channel IDs, User " +
+    "IDs, Server IDs, etc...";
             // 
             // input
             // 

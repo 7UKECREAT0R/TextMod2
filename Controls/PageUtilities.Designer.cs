@@ -36,6 +36,7 @@ namespace TextMod_2.Controls
             this.asciiArtButton = new System.Windows.Forms.Button();
             this.keyboardModsButton = new System.Windows.Forms.Button();
             this.idDecoderButton = new System.Windows.Forms.Button();
+            this.longTyperButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -43,21 +44,21 @@ namespace TextMod_2.Controls
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 83);
+            this.label2.Location = new System.Drawing.Point(20, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(920, 32);
+            this.label2.Size = new System.Drawing.Size(847, 32);
             this.label2.TabIndex = 4;
-            this.label2.Text = "A collection of tools I have used over the years! Maybe I\'ll do the UI for them s" +
-    "ome day.";
+            this.label2.Text = "A sweet collection of fun and useful tools that have nothing to do with anything!" +
+    "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(249)))), ((int)(((byte)(131)))));
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 74);
+            this.label1.Size = new System.Drawing.Size(242, 65);
             this.label1.TabIndex = 5;
             this.label1.Text = "UTILITIES";
             // 
@@ -146,11 +147,29 @@ namespace TextMod_2.Controls
             this.idDecoderButton.UseVisualStyleBackColor = false;
             this.idDecoderButton.Click += new System.EventHandler(this.idDecoderButton_Click);
             // 
+            // longTyperButton
+            // 
+            this.longTyperButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.longTyperButton.FlatAppearance.BorderSize = 0;
+            this.longTyperButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.longTyperButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.longTyperButton.ForeColor = System.Drawing.Color.White;
+            this.longTyperButton.Location = new System.Drawing.Point(26, 420);
+            this.longTyperButton.Margin = new System.Windows.Forms.Padding(26, 3, 26, 3);
+            this.longTyperButton.Name = "longTyperButton";
+            this.longTyperButton.Size = new System.Drawing.Size(962, 50);
+            this.longTyperButton.TabIndex = 8;
+            this.longTyperButton.Text = "   LONG TYPER";
+            this.longTyperButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.longTyperButton.UseVisualStyleBackColor = false;
+            this.longTyperButton.Click += new System.EventHandler(this.longTyperButton_Click);
+            // 
             // PageUtilities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.Controls.Add(this.longTyperButton);
             this.Controls.Add(this.idDecoderButton);
             this.Controls.Add(this.keyboardModsButton);
             this.Controls.Add(this.asciiArtButton);
@@ -174,5 +193,6 @@ namespace TextMod_2.Controls
         private System.Windows.Forms.Button asciiArtButton;
         private System.Windows.Forms.Button keyboardModsButton;
         private System.Windows.Forms.Button idDecoderButton;
+        private System.Windows.Forms.Button longTyperButton;
     }
 }
