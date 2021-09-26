@@ -8,6 +8,19 @@ namespace TextMod_2
 {
     static class Program
     {
+        public const string VERSION_FILE = "current-version.txt";
+        static string currentVersion = null;
+
+        public static int CurrentVersion
+        {
+            get
+            {
+                if (currentVersion == null)
+                    currentVersion = System.IO.File.ReadAllText(VERSION_FILE).Trim('\n', '\f', '\t').Trim();
+                return int.Parse(currentVersion);
+            }
+        }
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

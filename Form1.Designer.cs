@@ -50,13 +50,13 @@ namespace TextMod_2
             // 
             // title
             // 
-            this.title.Font = new System.Drawing.Font("Tw Cen MT Condensed", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(252)))), ((int)(((byte)(177)))));
-            this.title.Location = new System.Drawing.Point(12, 9);
+            this.title.Location = new System.Drawing.Point(15, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(638, 76);
+            this.title.Size = new System.Drawing.Size(263, 75);
             this.title.TabIndex = 0;
-            this.title.Text = "TEXTMOD 2.0";
+            this.title.Text = "TEXTMOD";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // exitButton

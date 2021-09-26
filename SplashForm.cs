@@ -18,31 +18,10 @@ namespace TextMod_2
         public SplashForm()
         {
             InitializeComponent();
-            timer = new System.Threading.Timer(QueryStatus, this, 1000, 32);
         }
         private void SplashForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer.Dispose();
-        }
-        private void QueryStatus(object state)
-        {
-            SplashForm self = state as SplashForm;
-            if (self.label1.Text.Equals(STATUS))
-                return;
-
-            MethodInvoker invoke = delegate ()
-            {
-                self.label1.Text = STATUS;
-            };
-
-            try
-            {
-                self.Invoke(invoke, state);
-            }
-            catch (Exception)
-            {
-                timer.Dispose();
-            }
         }
     }
 }

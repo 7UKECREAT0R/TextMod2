@@ -18,7 +18,7 @@ namespace TextMod_2.Variables
 
             MouseHook.MouseAction += MouseHook_MouseAction;
             MouseHook.Start();
-    }
+        }
 
         private void MouseHook_MouseAction(object sender, EventArgs e)
         {
@@ -26,6 +26,12 @@ namespace TextMod_2.Variables
         }
         public override string GetString(string argument)
         {
+            if (!MouseHook.hookStarted)
+            {
+                System.Diagnostics.Debug.WriteLine("mouse hook started");
+                MouseHook.MouseAction += MouseHook_MouseAction;
+                MouseHook.Start();
+            }
             return clicks.ToString();
         }
         public override void Dispose()
